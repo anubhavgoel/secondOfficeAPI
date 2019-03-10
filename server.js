@@ -18,7 +18,7 @@ mongoose.Promise = global.Promise;
 
 // Connecting to the database
 mongoose
-  .connect(dbConfig.url, {
+  .connect(process.env.MONGODB_URI || dbConfig.url, {
     useNewUrlParser: true
   })
   .then(() => {
